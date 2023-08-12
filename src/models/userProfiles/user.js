@@ -2,16 +2,16 @@ const { createSchemaAndSyncModel } = require("../../utils/schemaTableCreateFunct
 
 module.exports = (sequelize, DataTypes) => {
 
-  const People = sequelize.define('People', {
+  const User = sequelize.define('User', {
     username: {
       type: DataTypes.STRING,
       allowNull: false
     }
   }, {
     schema: 'practice_profiles', 
-    tableName: 'people',
+    tableName: 'user',
   })
-  // createSchemaAndSyncModel(sequelize, false, 'practice_profiles', true, People);
+  // createSchemaAndSyncModel(sequelize, true, 'practice_profiles', true, User);
 
-  return People  
+  return User  
   } 

@@ -1,4 +1,4 @@
-const { createSchemaAndSyncModel } = require("../../utils/schemaTableCreateFunction");
+// const { createSchemaAndSyncModel } = require("../../utils/schemaTableCreateFunction");
 
 module.exports = (sequelize, DataTypes) => {
 
@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     schema: 'practice_schema', 
     tableName: 'Actor',
   });
-  // createSchemaAndSyncModel(sequelize, false, 'practice_schema', false, Actor);
+  // createSchemaAndSyncModel(sequelize, true, 'practice_schema', false, Actor);
 
   return Actor  
   } 

@@ -1,4 +1,4 @@
-const { createSchemaAndSyncModel } = require("../../utils/schemaTableCreateFunction");
+// const { createSchemaAndSyncModel } = require("../../utils/schemaTableCreateFunction");
 const Movie = require('./movie')
 const Actor = require('./actor')
 module.exports = (sequelize, DataTypes) => {

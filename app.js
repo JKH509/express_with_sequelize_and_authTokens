@@ -21,6 +21,10 @@ app.use(morgan(':method :url HTTP/:http-version" :status :res[content-length] ":
 const authRoutes = require('./src/routes/authRoutes')();
 const businessRoutes = require('./src/routes/businessRoutes')();
 const adminRoutes = require('./src/routes/adminRoutes')();
+const profileRoutes = require('./src/routes/quickRoutes/profileRoutes')();
+const projectRoutes = require('./src/routes/quickRoutes/projectRoutes')();
+const taskRoutes = require('./src/routes/quickRoutes/taskRoutes')();
+const userRoutes = require('./src/routes/quickRoutes/userRoutes')();
 
 
 
@@ -30,6 +34,11 @@ const adminRoutes = require('./src/routes/adminRoutes')();
 app.use('/', authRoutes)
 app.use('/', businessRoutes)
 app.use('/', adminRoutes)
+
+app.use('/', profileRoutes)
+app.use('/', projectRoutes)
+app.use('/', taskRoutes)
+app.use('/', userRoutes)
 
 
 

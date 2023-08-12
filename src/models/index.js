@@ -46,20 +46,20 @@ Object.keys(db).forEach(modelName => {
   }
 }); 
 
-
+ 
 // One-to-One Relationship
-db.People.hasOne(db.Profile);
-db.Profile.belongsTo(db.People);
+db.User.hasOne(db.Profile);
+db.Profile.belongsTo(db.User);
 
 // One-to-Many Relationship
 // User and Task Models: A user can have many tasks 
-db.People.hasMany(db.Task);
-db.Task.belongsTo(db.People);
+db.User.hasMany(db.Task);
+db.Task.belongsTo(db.User);
 
 // Many-to-Many Relationship
 // User and Project Models: A user can be part of many projects, and a project can have many users.
-db.People.belongsToMany(db.Project, { through: 'UserProject' });
-db.Project.belongsToMany(db.People, { through: 'UserProject' });
+db.User.belongsToMany(db.Project, { through: 'UserProject' });
+db.Project.belongsToMany(db.User, { through: 'UserProject' });
 
 // db.Movie.belongsToMany(db.Actor, { through: 'ActorMovie' });
 // db.Actor.belongsToMany(db.Movie, { through: 'ActorMovie' });
