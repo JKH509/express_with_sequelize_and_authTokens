@@ -47,8 +47,6 @@ Object.keys(db).forEach(modelName => {
 }); 
 
 
-
-
 // One-to-One Relationship
 db.People.hasOne(db.Profile);
 db.Profile.belongsTo(db.People);
@@ -66,13 +64,6 @@ db.Project.belongsToMany(db.People, { through: 'UserProject' });
 // db.Movie.belongsToMany(db.Actor, { through: 'ActorMovie' });
 // db.Actor.belongsToMany(db.Movie, { through: 'ActorMovie' });
 
-db.Role.belongsToMany(db.User, { through: 'UserRole' });
-
-// In Role model
-db.Role.belongsToMany(db.Permission, { through: db.RolePermission, foreignKey: 'role_id' });
-
-// In Permission model
-db.Permission.belongsToMany(db.Role, { through: db.RolePermission, foreignKey: 'permission_id' });
 
 
 db.sequelize = sequelize;

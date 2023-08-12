@@ -5,15 +5,9 @@ const businessRouter = express.Router();
 
 function router() {
 
-  let {  
-    handleRegisterBusiness
-  } = businessController();
+  const { handleRegisterBusiness } = businessController();
 
   businessRouter.route('/register_business').post(handleRegisterBusiness);
-  // businessRouter.route('/auth').post(handleLogin);
-  // businessRouter.route('/refresh-token').post(handleRefreshToken);
-  // businessRouter.route('/logout').get(handleLogout);
-
 
   return businessRouter;
 };
