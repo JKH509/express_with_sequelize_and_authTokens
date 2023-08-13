@@ -6,14 +6,13 @@ const projectRouter = express.Router();
 
 function router() {
 
-  const { createProject } = projectControllers();
+  const { getAllProject, createProject, projectById, updateProject, deleteProject } = projectControllers();
 
-    // projectRouter.route('/all_projects').get(createUser);
-    projectRouter.route('/create_project').post(createProject);
-    // projectRouter.route('/update').put(createUser);
-    // projectRouter.route('/get_by_post/:id').get(createUser);
-    // projectRouter.route('/get_by_id/:id').get(createUser);
-    // projectRouter.route('/delete/:id').delete(createUser);
+  projectRouter.route('/all_projects').get(getAllProject);
+  projectRouter.route('/create_project').post(createProject);
+  projectRouter.route('/get_project_by/:id').get(projectById);
+  projectRouter.route('/update_project/:id').put(updateProject);
+  projectRouter.route('/delete_project/:id').delete(deleteProject);
 
   return projectRouter;
 };

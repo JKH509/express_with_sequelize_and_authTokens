@@ -6,14 +6,13 @@ const profileRouter = express.Router();
 
 function router() {
 
-  const { createProfile } = profileControllers();
+  const { getAllProfile, createProfile, profileById, updateProfile, deleteProfile } = profileControllers();
 
-     // profileRouter.route('/all_profiles').get(createUser);
-     profileRouter.route('/create_profile').post(createProfile);
-     // profileRouter.route('/update').put(createUser);
-     // profileRouter.route('/get_by_post/:id').get(createUser);
-     // profileRouter.route('/get_by_id/:id').get(createUser);
-     // profileRouter.route('/delete/:id').delete(createUser);
+  profileRouter.route('/all_profiles').get(getAllProfile);
+  profileRouter.route('/create_profile').post(createProfile);
+  profileRouter.route('/get_profile_by/:id').get(profileById);
+  profileRouter.route('/update_profile/:id').put(updateProfile);
+  profileRouter.route('/delete_profile/:id').delete(deleteProfile);
 
   return profileRouter;
 };

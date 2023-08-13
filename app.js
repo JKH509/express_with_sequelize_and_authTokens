@@ -21,6 +21,7 @@ app.use(morgan(':method :url HTTP/:http-version" :status :res[content-length] ":
 const authRoutes = require('./src/routes/authRoutes')();
 const businessRoutes = require('./src/routes/businessRoutes')();
 const adminRoutes = require('./src/routes/adminRoutes')();
+
 const profileRoutes = require('./src/routes/quickRoutes/profileRoutes')();
 const projectRoutes = require('./src/routes/quickRoutes/projectRoutes')();
 const taskRoutes = require('./src/routes/quickRoutes/taskRoutes')();

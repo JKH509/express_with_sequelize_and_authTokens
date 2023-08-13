@@ -5,14 +5,13 @@ const taskRouter = express.Router();
 
 function router() {
 
-  const { createTask } = taskControllers();
+  const { getAllTask, createTask, taskById, updateTask, deleteTask } = taskControllers();
 
-    // taskRouter.route('/all_task').get(createUser);
-    taskRouter.route('/create_task').post(createTask);
-    // taskRouter.route('/update').put(createUser);
-    // taskRouter.route('/get_by_post/:id').get(createUser);
-    // taskRouter.route('/get_by_id/:id').get(createUser);
-    // taskRouter.route('/delete/:id').delete(createUser);
+  taskRouter.route('/all_tasks').get(getAllTask);
+  taskRouter.route('/create_task').post(createTask);
+  taskRouter.route('/get_task_by/:id').get(taskById);
+  taskRouter.route('/update_task/:id').put(updateTask);
+  taskRouter.route('/delete_task/:id').delete(deleteTask);
 
   return taskRouter;
 };
